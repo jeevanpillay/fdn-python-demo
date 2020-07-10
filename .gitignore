@@ -1,0 +1,4 @@
+/tempenv
+/src/demo/build
+*.class
+*.txt
