@@ -51,13 +51,13 @@ Deactivate the python virtual environment
 ### Expected output ###
 In the python.txt file, per variant, 10 lines like:
 
-	Vanilla     641036.75us, checksum 163457.228047, head [ 0.89, 0.48, 1.00, 0.00, 0.00, ...]
-	Numpy vec   285016.06us, checksum 163457.228047, head [ 0.89, 0.48, 1.00, 0.00, 0.00, ...]
-	Native-c     11000.00us, checksum 163457.228047, head [ 0.89, 0.48, 1.00, 0.00, 0.00, ...]
-	Wrapping c  175009.97us, checksum 163457.228047, head [ 0.89, 0.48, 1.00, 0.00, 0.00, ...]
-	Numba vec    10000.47us, checksum 163457.228047, head [ 0.89, 0.48, 1.00, 0.00, 0.00, ...]
+	Vanilla     594034.19us, checksum 163795.072368, head [ 0.00, 1.00, 0.00, 0.00, 0.00, ...]
+	Numpy vec   203011.51us, checksum 163795.072368, head [ 0.00, 1.00, 0.00, 0.00, 0.00, ...]
+	Native-c      7000.00us, checksum 163795.072368, head [ 0.00, 1.00, 0.00, 0.00, 0.00, ...]
+	Wrapping c  135007.86us, checksum 163795.072368, head [ 0.00, 1.00, 0.00, 0.00, 0.00, ...]
+	Numba vec     9000.54us, checksum 163795.072368, head [ 0.00, 1.00, 0.00, 0.00, 0.00, ...]
 
 In the java.txt file, per variant, 10 lines like:
 
-	Stream       25672.04us, checksum 164080.174512, head [ 0.83, 0.97,-1.65, 0.00, 0.53, ...]
-	Loop         11064.05us, checksum 164080.174512, head [ 0.83, 0.97,-1.65, 0.00, 0.53, ...]
+	Stream       18781.74us, checksum 163775.621873, head [ 0.00, 0.92, 2.00, 0.00, 0.74, ...]
+	Loop         11228.22us, checksum 163775.621873, head [ 0.00, 0.92, 2.00, 0.00, 0.74, ...]

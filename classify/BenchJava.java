@@ -14,7 +14,7 @@ public class BenchJava {
 
 		final int numTrials = 10;
 		final int numPoints = (args.length == 1) ? Integer.parseInt(args[0]) : 500000;
-		final long seed = 324752092348L;
+		final long seed = 3247520923L;
 
 		// Generate datasets.
 		System.out.println("Initializing dataset of " + numPoints);
@@ -24,7 +24,8 @@ public class BenchJava {
 			allPoints.add(generateDataset(numPoints, seed+i));
 			allPointsFlat[i] = generateFlatDataset(numPoints, seed+i);
 		}
-		System.out.println("Benchmarking\n");
+		System.out.println("Benchmarking...");
+		System.out.println();
 
 		// Plain stream.
 		for (List<GaussPoint> points : allPoints) {
@@ -34,11 +35,11 @@ public class BenchJava {
 			List<Double> scores = points.stream()
 										.map(GaussPoint::classify)
 										.collect(Collectors.toList());
+			double checksum = scores.stream().mapToDouble(Double::valueOf).sum();
 			long end = System.nanoTime();
 
 			// Compute reporting quantities.
 			double time_us = ((end - start) / 1000D);
-			double checksum = scores.stream().mapToDouble(Double::valueOf).sum();
 			String head = scores.subList(0, 5).stream().map(d -> String.format(Locale.UK, "%5.2f", d)).collect(Collectors.joining(","));
 	
 			System.out.println(String.format(Locale.UK, "%-12s%9.2fus, checksum %f, head [%s, ...]", "Stream", time_us, checksum, head));
@@ -53,11 +54,11 @@ public class BenchJava {
 			// Time and test.
 			long start = System.nanoTime();
 			double[] scores = inplaceLoop(points);
+			double checksum = Arrays.stream(scores).limit(numPoints).sum();
 			long end = System.nanoTime();
 
 			// Compute reporting quantities.
 			double time_us = ((end - start) / 1000D);
-			double checksum = Arrays.stream(scores).limit(numPoints).sum();
 			String head = Arrays.stream(scores).limit(5).mapToObj(d -> String.format(Locale.UK, "%5.2f", d)).collect(Collectors.joining(","));
 	
 			System.out.println(String.format(Locale.UK, "%-12s%9.2fus, checksum %f, head [%s, ...]", "Loop", time_us, checksum, head));
