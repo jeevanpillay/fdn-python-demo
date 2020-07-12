@@ -1,6 +1,12 @@
+### Python venv
 */**/Lib/site-packages/
 */**/Scripts/
 pyvenv.cfg
+
+### Compilation
 */**/build/
 *.class
+*.pyc
+
+### Output
 *.txt

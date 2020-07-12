@@ -20,7 +20,7 @@ Set up a temporary Python venv virtual environment and activate it.
 	py -3 -m venv tempenv
 	.\tempenv\Scripts\activate
 
-Install and/or update pip, numpy, disttools. On Windows, this assumes [Microsoft Visual C++ build tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed.
+Install and/or update pip, numpy, numba, disttools. On Windows, installing disttools assumes [Microsoft Visual C++ build tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed.
 
 	python -m pip install --upgrade pip numpy numba disttools
 
