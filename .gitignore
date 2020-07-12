@@ -1,4 +1,6 @@
-/tempenv
-/src/demo/build
+*/**/Lib/site-packages/
+*/**/Scripts/
+pyvenv.cfg
+*/**/build/
 *.class
 *.txt
